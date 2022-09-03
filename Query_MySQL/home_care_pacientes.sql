@@ -31,8 +31,8 @@ CREATE TABLE `pacientes` (
   `direccion` varchar(50) NOT NULL,
   `longitud` varchar(30) DEFAULT NULL,
   `latitud` varchar(30) DEFAULT NULL,
-  `telefono` int NOT NULL,
-  `ciudad` char(30) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
+  `ciudad` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -44,7 +44,7 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (5489784,'pedro','suarez','1960-05-27','masculino','calle 30 50 20','5°N','20°E',6930257,'Bogota','pedro_sua@gmail.com');
+INSERT INTO `pacientes` VALUES (5489784,'pedro','suarez','1960-05-27','masculino','calle 30 50 20','5°N','20°E','6930257','Bogota','pedro_sua@gmail.com'),(5689745,'juan','rodriguez','1958-05-15','masculino','calle 25 50 10','7°N','9°E','5698741','Bogota','juan_sua@gmail.com');
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-01 16:35:07
+-- Dump completed on 2022-09-02 18:20:07

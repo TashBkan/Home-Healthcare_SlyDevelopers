@@ -23,21 +23,21 @@ DROP TABLE IF EXISTS `historia_clinica`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `historia_clinica` (
-  `Id` int NOT NULL,
+  `Id` int NOT NULL AUTO_INCREMENT,
   `diagnostico` varchar(50) NOT NULL,
   `signos` varchar(50) NOT NULL,
-  `oximetria` varchar(50) NOT NULL,
+  `oximetria` varchar(50) DEFAULT NULL,
   `frecRespiratoria` varchar(50) NOT NULL,
   `frecCardiaca` varchar(50) NOT NULL,
   `temperatura` varchar(50) NOT NULL,
   `presionArterial` varchar(50) NOT NULL,
   `glicemias` varchar(50) NOT NULL,
-  `sugerencias_cuidado` varchar(50) NOT NULL,
+  `sugerenciasCuidado` varchar(50) NOT NULL,
   `pacienteID` int DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `pacienteID` (`pacienteID`),
   CONSTRAINT `historia_clinica_ibfk_1` FOREIGN KEY (`pacienteID`) REFERENCES `pacientes` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +46,7 @@ CREATE TABLE `historia_clinica` (
 
 LOCK TABLES `historia_clinica` WRITE;
 /*!40000 ALTER TABLE `historia_clinica` DISABLE KEYS */;
+INSERT INTO `historia_clinica` VALUES (1,'tuberculosis','70','16','12','75','36.5','120/80','7.8','continuar con administracion de medicamentos',5489784),(2,'hemiparesia','75','18','13','73','37.5','110/70','8.8','se requiere fisioterapia',5689745);
 /*!40000 ALTER TABLE `historia_clinica` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-01 16:35:07
+-- Dump completed on 2022-09-02 18:20:07

@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `medico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `medico` (
-  `Id_medico` int NOT NULL,
+  `Id` int NOT NULL,
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `genero` varchar(50) DEFAULT NULL,
-  `telefono` varchar(30) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `registroMedico` varchar(50) NOT NULL,
   `especialidad` varchar(50) NOT NULL,
   `pacienteID` int DEFAULT NULL,
-  PRIMARY KEY (`Id_medico`),
+  PRIMARY KEY (`Id`),
   KEY `pacienteID` (`pacienteID`),
   CONSTRAINT `medico_ibfk_1` FOREIGN KEY (`pacienteID`) REFERENCES `pacientes` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -43,7 +43,7 @@ CREATE TABLE `medico` (
 
 LOCK TABLES `medico` WRITE;
 /*!40000 ALTER TABLE `medico` DISABLE KEYS */;
-INSERT INTO `medico` VALUES (102564789,'esteban','cortez','masculino','3115230002','4568793214','medicina familiar',5489784);
+INSERT INTO `medico` VALUES (102564789,'esteban','cortez','masculino','3115230002','4568793214','medicina_familiar',5489784),(452365782,'carlos','arevalo','masculino','3114568700','5211102142','medicina_interna',5689745);
 /*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-01 16:35:05
+-- Dump completed on 2022-09-02 18:20:06

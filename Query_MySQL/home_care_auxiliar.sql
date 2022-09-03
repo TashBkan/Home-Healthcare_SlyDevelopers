@@ -27,7 +27,7 @@ CREATE TABLE `auxiliar` (
   `nombres` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `genero` varchar(50) DEFAULT NULL,
-  `telefono` int NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `pacienteID` int DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `pacienteID` (`pacienteID`),
@@ -41,6 +41,7 @@ CREATE TABLE `auxiliar` (
 
 LOCK TABLES `auxiliar` WRITE;
 /*!40000 ALTER TABLE `auxiliar` DISABLE KEYS */;
+INSERT INTO `auxiliar` VALUES (23564210,'mauricio','perez','masculino','3203330000',5489784),(25636580,'fernanda','aparicio','femenina','3568789547',5689745);
 /*!40000 ALTER TABLE `auxiliar` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-01 16:35:08
+-- Dump completed on 2022-09-02 18:20:05
