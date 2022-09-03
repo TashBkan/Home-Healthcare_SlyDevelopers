@@ -1,0 +1,155 @@
+color #2c9faf
+
+CREATE TABLE pacientes (
+Id int NOT NULL PRIMARY KEY,
+nombres varchar (50) NOT NULL,
+apellidos varchar (50) NOT NULL,
+fechaNacimiento date NOT NULL,
+genero varchar (50) NULL,
+direccion varchar (50) NOT NULL,
+longitud varchar (30) NULL,
+latitud varchar (30) NULL,
+telefono varchar (50) NOT NULL,
+ciudad varchar (30) NOT NULL,
+Email varchar (30) NOT NULL
+);
+
+CREATE TABLE medico(
+Id int NOT NULL PRIMARY KEY,
+nombres varchar (50) NOT NULL,
+apellidos varchar (50) NOT NULL,
+genero varchar (50) NULL,
+telefono varchar (50) NOT NULL,
+registroMedico varchar (50) NOT NULL,
+especialidad char NOT NULL,
+pacienteID int,
+foreign key (pacienteID) references pacientes (ID)
+);
+
+CREATE TABLE enfermero(
+Id int NOT NULL PRIMARY KEY,
+nombres varchar (50) NOT NULL,
+apellidos varchar (50) NOT NULL,
+genero varchar (50) NULL,
+telefono varchar (50) NOT NULL,
+pacienteID int,
+foreign key (pacienteID) references pacientes (ID)
+);
+
+
+CREATE TABLE auxiliar(
+Id int NOT NULL PRIMARY KEY,
+nombres varchar (50) NOT NULL,
+apellidos varchar (50) NOT NULL,
+genero varchar (50) NULL,
+telefono varchar (50) NOT NULL,
+pacienteID int,
+foreign key (pacienteID) references pacientes (ID)
+);
+
+
+CREATE TABLE acompañante(
+Id int NOT NULL PRIMARY KEY,
+nombres varchar (50) NOT NULL,
+apellidos varchar (50) NOT NULL,
+genero varchar (50) NULL,
+telefono varchar (50) NOT NULL,
+parentezco varchar (50) NOT NULL,
+Email varchar (90) NOT NULL,
+pacienteID int,
+foreign key (pacienteID) references pacientes (Id)
+);
+
+
+CREATE TABLE historia_clinica(
+Id int primary key Not null auto_increment,
+diagnostico varchar (50) NOT NULL,
+signos varchar (50) NOT NULL,
+oximetria varchar (50) NULL,
+frecRespiratoria varchar (50) NOT NULL,
+frecCardiaca varchar (50) NOT NULL,
+temperatura varchar (50) NOT NULL,
+presionArterial varchar (50) NOT NULL,
+glicemias varchar (50) NOT NULL,
+sugerenciasCuidado varchar (50) NOT NULL,
+pacienteID int,
+foreign key (pacienteID) references pacientes (ID)
+);
+
+
+INSERT INTO pacientes VALUES
+(5489784, 'pedro', 'suarez', '1960-05-27', 'masculino', 'calle 30 50 20', '5°N', '20°E', '6930257', 'Bogota', 'pedro_sua@gmail.com');
+
+(5689745, 'juan', 'rodriguez', '1958-05-15', 'masculino', 'calle 25 50 10', '7°N', '9°E', '5698741', 'Bogota', 'juan_sua@gmail.com');
+
+(4589715, 'orieta', 'marquez', '1960-02-02', 'femenina', 'calle 22 09 15', '5°N', '3°E', '3201234562', 'Bogota', 'orietM@gmail.com');
+
+
+INSERT INTO medico VALUES
+(102564789, 'esteban', 'cortez', 'masculino', '3115230002', '4568793214', 'familiar', '5489784');
+
+(452365782, 'carlos', 'arevalo', 'masculino', '3114568700', '5211102142', 'medicina familiar', '5689745');
+
+(523654782, 'felipe', 'gonzalez', 'masculino', '3202220001', '5236547840', 'medicina_general', '4589715');
+
+
+INSERT INTO enfermero VALUES
+(102568974, 'julio', 'cortez', 'masculino', '3568789547', '5689745'),
+
+(256547898, 'laura', 'zapata', 'femenina', '3502356800', '5489784'), 
+
+(235642012, 'vanessa', 'jara', 'femenina', '3201110225', '4589715'); 
+
+INSERT INTO auxiliar VALUES
+
+(25636580, 'fernanda', 'aparicio', 'femenina', '3568789547', '5689745'),
+(23564210, 'mauricio', 'perez', 'masculino', '3203330000', '5489784');
+(21022254, 'jairo', 'marin', 'masculino', '3151222320', '4589715');
+
+INSERT INTO acompañante VALUES
+
+(35235784, 'marcela', 'garcia', 'femenino', '3212564151', 'sobrina', 'marceG@gmail.com', '5489784');
+
+(45689421, 'carlos', 'rodriguez', 'masculino', '300221100', 'hijo', 'carlosC@gmail.com', '5689745');
+(20321451, 'laura', 'marquez', 'femenina', '3102321250', 'hermana', 'lauraM@gmail.com', '4589715');
+
+
+INSERT INTO historia_clinica (diagnostico, signos, oximetria, frecRespiratoria, frecCardiaca, temperatura, presionArterial, glicemias, sugerenciasCuidado, pacienteID)
+values ('tuberculosis', '70', '16', '12', '75', '36.5', '120/80', '7.8', 'continuar con administracion de medicamentos', '5489784');
+
+(diagnostico, signos, oximetria, frecRespiratoria, frecCardiaca, temperatura, presionArterial, glicemias, sugerenciasCuidado, pacienteID)
+values ('hemiparesia', '75', '18', '13', '73', '37.5', '110/70', '8.8', 'se requiere fisioterapia', '5689745');
+
+(diagnostico, signos, oximetria, frecRespiratoria, frecCardiaca, temperatura, presionArterial, glicemias, sugerenciasCuidado, pacienteID)
+values ('cirrosis', '69', '14', '15', '71', '39.5', '130/70', '9.8', 'valoracion medicina interna', '4589715');
+
+
+SELECT FROM pacientes;
+SELECT FROM medico;
+
+
+DELETE FROM pacientes WHERE nombres='pedro';
+
+
+
+
+
+
+
+
+SELECT pacientes.nombre AS nombre_paciente, medico.nombre AS nombre_medico FROM medico
+INNER JOIN paciente ON medico.pacienteID = pacientesId;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
