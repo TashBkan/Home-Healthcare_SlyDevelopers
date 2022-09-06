@@ -41,7 +41,7 @@ CREATE TABLE `enfermero` (
 
 LOCK TABLES `enfermero` WRITE;
 /*!40000 ALTER TABLE `enfermero` DISABLE KEYS */;
-INSERT INTO `enfermero` VALUES (102568974,'julio','cortez','masculino','3568789547',5689745),(256547898,'laura','zapata','femenina','3502356800',5489784);
+INSERT INTO `enfermero` VALUES (102568974,'julio','cortez','masculino','3568789547',5689745),(235642012,'vanessa','jara','femenina','3201110225',4589715),(256547898,'laura','zapata','femenina','3502356800',5489784);
 /*!40000 ALTER TABLE `enfermero` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-02 18:20:06
+-- Dump completed on 2022-09-02 20:34:18

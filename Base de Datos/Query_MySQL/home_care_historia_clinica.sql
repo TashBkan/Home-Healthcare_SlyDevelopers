@@ -37,7 +37,7 @@ CREATE TABLE `historia_clinica` (
   PRIMARY KEY (`Id`),
   KEY `pacienteID` (`pacienteID`),
   CONSTRAINT `historia_clinica_ibfk_1` FOREIGN KEY (`pacienteID`) REFERENCES `pacientes` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `historia_clinica` (
 
 LOCK TABLES `historia_clinica` WRITE;
 /*!40000 ALTER TABLE `historia_clinica` DISABLE KEYS */;
-INSERT INTO `historia_clinica` VALUES (1,'tuberculosis','70','16','12','75','36.5','120/80','7.8','continuar con administracion de medicamentos',5489784),(2,'hemiparesia','75','18','13','73','37.5','110/70','8.8','se requiere fisioterapia',5689745);
+INSERT INTO `historia_clinica` VALUES (1,'tuberculosis','70','16','12','75','36.5','120/80','7.8','continuar con administracion de medicamentos',5489784),(2,'hemiparesia','75','18','13','73','37.5','110/70','8.8','se requiere fisioterapia',5689745),(3,'cirrosis','69','14','15','71','39.5','130/70','9.8','valoracion medicina interna',4589715);
 /*!40000 ALTER TABLE `historia_clinica` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-02 18:20:07
+-- Dump completed on 2022-09-02 20:34:19

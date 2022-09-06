@@ -43,7 +43,7 @@ CREATE TABLE `acompañante` (
 
 LOCK TABLES `acompañante` WRITE;
 /*!40000 ALTER TABLE `acompañante` DISABLE KEYS */;
-INSERT INTO `acompañante` VALUES (35235784,'marcela','garcia','femenino','3212564151','sobrina','marceG@gmail.com',5489784),(45689421,'carlos','rodriguez','masculino','300221100','hijo','carlosC@gmail.com',5689745);
+INSERT INTO `acompañante` VALUES (20321451,'laura','marquez','femenina','3102321250','hermana','lauraM@gmail.com',4589715),(35235784,'marcela','garcia','femenino','3212564151','sobrina','marceG@gmail.com',5489784),(45689421,'carlos','rodriguez','masculino','300221100','hijo','carlosC@gmail.com',5689745);
 /*!40000 ALTER TABLE `acompañante` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-02 18:20:06
+-- Dump completed on 2022-09-02 20:34:18

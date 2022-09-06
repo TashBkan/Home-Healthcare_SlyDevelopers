@@ -43,7 +43,7 @@ CREATE TABLE `medico` (
 
 LOCK TABLES `medico` WRITE;
 /*!40000 ALTER TABLE `medico` DISABLE KEYS */;
-INSERT INTO `medico` VALUES (102564789,'esteban','cortez','masculino','3115230002','4568793214','medicina_familiar',5489784),(452365782,'carlos','arevalo','masculino','3114568700','5211102142','medicina_interna',5689745);
+INSERT INTO `medico` VALUES (452365782,'carlos','arevalo','masculino','3114568700','5211102142','medicina familiar',5689745),(523654782,'felipe','gonzalez','masculino','3202220001','5236547840','medicina_general',4589715);
 /*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-02 18:20:06
+-- Dump completed on 2022-09-02 20:34:19
