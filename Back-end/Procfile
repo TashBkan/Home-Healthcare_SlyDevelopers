@@ -1,0 +1,1 @@
+web: gunicorn homeCareProject.wsgi
