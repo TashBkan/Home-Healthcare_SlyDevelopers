@@ -21,7 +21,7 @@ class Medico(models.Model):
     telefono = models.BigIntegerField(null=True)
     registroMedico = models.CharField (max_length=50)
     especialidad = models.CharField (max_length=50)
-    pacienteId = models.ForeignKey(Paciente, related_name='medico', on_delete=models.CASCADE)
+    pacienteId = models.ForeignKey(Paciente, on_delete=models.CASCADE)
 
 class Enfermero(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -29,7 +29,7 @@ class Enfermero(models.Model):
     apellidos = models.CharField(max_length=50)
     genero = models.CharField(max_length=30,null=True)
     telefono = models.BigIntegerField(null=True)
-    pacienteId = models.ForeignKey(Paciente, related_name='enfermero', on_delete=models.CASCADE)
+    pacienteId = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     
 class Auxiliar(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -37,7 +37,7 @@ class Auxiliar(models.Model):
     apellidos = models.CharField(max_length=50)
     genero = models.CharField(max_length=30,null=True)
     telefono = models.BigIntegerField(null=True)
-    pacienteId = models.ForeignKey(Paciente, related_name='auxiliar', on_delete=models.CASCADE)
+    pacienteId = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     
 class Acompañante(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -46,7 +46,7 @@ class Acompañante(models.Model):
     genero = models.CharField(max_length=30,null=True)
     telefono = models.BigIntegerField(null=True)
     email = models.EmailField(max_length=100, unique=True)
-    pacienteId = models.ForeignKey(Paciente, related_name='acompañante', on_delete=models.CASCADE)
+    pacienteId = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     
 class Historia_clinica(models.Model):
     id = models.AutoField(primary_key=True)
@@ -59,4 +59,4 @@ class Historia_clinica(models.Model):
     presionArterial = models.CharField(max_length=30)
     glicemias = models.CharField(max_length=30)
     sugerencias_cuidado = models.CharField(max_length=300)
-    pacienteId = models.ForeignKey(Paciente, related_name='historia_clinica', on_delete=models.CASCADE)
+    pacienteId = models.ForeignKey(Paciente, on_delete=models.CASCADE)

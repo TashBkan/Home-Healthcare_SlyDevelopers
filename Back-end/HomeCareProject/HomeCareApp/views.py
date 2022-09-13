@@ -180,6 +180,7 @@ def getAllMedicos(request):
             resp = HttpResponse()
             resp.headers['Content-Type'] = 'text/json'
             resp.content = json.dumps(allMediData)
+            print (resp)
             return resp
         except:
             return HttpResponseServerError("Error de servidor")
