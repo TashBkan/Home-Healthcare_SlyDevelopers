@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+from datetime import timedelta
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,15 +41,38 @@ INSTALLED_APPS = [
     'HomeCareApp'
 ]
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': False,
+
+    'ALGORITHM': 'HS256',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-#   'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':(
+        'rest_framework.permissions.AllowAny',        
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+AUTH_USER_MODEL = 'HomeCareApp.User'
 
 ROOT_URLCONF = 'HomeCareProject.urls'
 
@@ -77,10 +101,10 @@ WSGI_APPLICATION = 'HomeCareProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd5rdfgcmt5phkc',
-        'USER': 'pjcudvtgprgewc',
-        'PASSWORD': 'a492074f058928c88ea439ffcc0fbffa3f87cde50d61a6959a6ae57325ddf837',
-        'HOST': 'ec2-44-209-158-64.compute-1.amazonaws.com',
+        'NAME': 'df9pmp60sr08t5',
+        'USER': 'nlwkhffnrmnacj',
+        'PASSWORD': '758d809598324e51ea37d43d143bda936a7ba63b8dbd274bafaff3e5db4220a0',
+        'HOST': 'ec2-34-199-68-114.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

@@ -1,0 +1,7 @@
+from .medicoSerializer import MedicoSerializer
+from .pacienteSerializer import PacienteSerializer
+from .userSerializer import UserSerializer
+from .enfermeroSerializer import EnfermeroSerializer
+from .acompañanteSerializer import AcompañanteSerializer
+from .auxiliarSerializer import AuxiliarSerializer
+from .historiaClinicaSerializer import HistoriaClinicaSerializer
