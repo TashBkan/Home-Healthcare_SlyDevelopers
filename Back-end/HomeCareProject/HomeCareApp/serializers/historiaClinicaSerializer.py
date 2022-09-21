@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from HomeCareApp.models.historiClinicaModels import HistoriaClinica
+from homeCareApp.models.historiClinicaModels import HistoriaClinica
 
 class HistoriaClinicaSerializer(serializers.ModelSerializer):
     class Meta:

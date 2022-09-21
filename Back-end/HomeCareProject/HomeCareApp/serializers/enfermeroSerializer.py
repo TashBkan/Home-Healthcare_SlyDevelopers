@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from HomeCareApp.models.enfermeroModels import Enfermero
-
+from homeCareApp.models.enfermeroModels import Enfermero
 
 class EnfermeroSerializer(serializers.ModelSerializer):
     class Meta:

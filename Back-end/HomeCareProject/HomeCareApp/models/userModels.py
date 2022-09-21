@@ -25,10 +25,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     rol = models.TextField('Rol', max_length=20)
     username = models.CharField('Username', max_length = 15, unique=True)
     password = models.CharField('Password', max_length = 256)
-    nombres = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=50)
-    telefono = models.BigIntegerField(null=True)
-    genero = models.CharField(max_length=30,null=True)
+    nombres = models.CharField('Name', max_length=50)
+    apellidos = models.CharField('Lastname', max_length=50)
+    telefono = models.BigIntegerField('Phone', null=True)
+    genero = models.CharField('Gender', max_length=30,null=True)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'

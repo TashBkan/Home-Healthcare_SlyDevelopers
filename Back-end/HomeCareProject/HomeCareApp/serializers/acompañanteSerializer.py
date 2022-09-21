@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from HomeCareApp.models.acompañanteModels import Acompañante
+from homeCareApp.models.acompañanteModels import Acompañante
 
 class AcompañanteSerializer(serializers.ModelSerializer):
     class Meta:

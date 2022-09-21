@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from HomeCareApp.models.auxiliarModels import Auxiliar
+from homeCareApp.models.auxiliarModels import Auxiliar
 
 class AuxiliarSerializer(serializers.ModelSerializer):
     class Meta:

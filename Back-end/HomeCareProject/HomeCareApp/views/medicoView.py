@@ -5,9 +5,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-from HomeCareApp.models.medicoModels import Medico
-from HomeCareApp.serializers.medicoSerializer import MedicoSerializer
-from HomeCareApp.serializers.userSerializer import UserSerializer
+from homeCareApp.models.medicoModels import Medico
+from homeCareApp.serializers.medicoSerializer import MedicoSerializer
+from homeCareApp.serializers.userSerializer import UserSerializer
 
 class CreateView(views.APIView):
 
